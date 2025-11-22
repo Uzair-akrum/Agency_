@@ -157,7 +157,6 @@ export const GenerativeAI: React.FC = () => {
           {/* Step 1 */}
           <div className="bg-[#0e0e0e] p-8 md:p-10 rounded-xl border border-white/5 flex flex-col gap-12 group hover:bg-[#141414] transition-all duration-300">
             <div className="w-14 h-14 flex items-center justify-start text-white group-hover:scale-110 transition-transform">
-               {/* Placeholder for Dotted Spark Icon - using Zap as generic match */}
                <Zap className="w-10 h-10 text-white opacity-90" strokeWidth={1.5} style={{ strokeDasharray: '4 2' }} />
             </div>
             <div>
@@ -173,11 +172,9 @@ export const GenerativeAI: React.FC = () => {
 
           {/* Step 2 - Highlighted */}
           <div className="bg-[#111] p-8 md:p-10 rounded-xl border-2 border-white/20 flex flex-col gap-12 relative shadow-[0_0_50px_rgba(255,255,255,0.05)] transform md:-translate-y-2">
-             {/* Highlight glow effect overlay */}
             <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-white/5 to-transparent pointer-events-none"></div>
             
             <div className="w-14 h-14 flex items-center justify-start text-white relative z-10">
-               {/* Placeholder for Dotted Flow Icon - using Waypoints */}
                <Waypoints className="w-10 h-10 text-white opacity-100" strokeWidth={1.5} style={{ strokeDasharray: '3 3' }} />
             </div>
             <div className="relative z-10">
@@ -189,14 +186,12 @@ export const GenerativeAI: React.FC = () => {
                 Map workflows, test key interactions, align on success metrics.
               </p>
             </div>
-            {/* Bottom corner gradient hint similar to image */}
             <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-white/5 to-transparent rounded-br-xl pointer-events-none"></div>
           </div>
 
           {/* Step 3 */}
           <div className="bg-[#0e0e0e] p-8 md:p-10 rounded-xl border border-white/5 flex flex-col gap-12 group hover:bg-[#141414] transition-all duration-300">
             <div className="w-14 h-14 flex items-center justify-start text-white group-hover:scale-110 transition-transform">
-               {/* Placeholder for Dotted Cycle Icon - using RefreshCcw */}
                <RefreshCcw className="w-10 h-10 text-white opacity-90" strokeWidth={1.5} style={{ strokeDasharray: '4 2' }} />
             </div>
             <div>
@@ -208,6 +203,84 @@ export const GenerativeAI: React.FC = () => {
                 Deliver agent in production, measure business impact, refine.
               </p>
             </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Section 4: Industries */}
+      <section className="py-32 px-6 md:px-12 max-w-[1400px] mx-auto">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-sans font-medium text-white leading-tight max-w-4xl mx-auto">
+            If a Human Can Do It Online — So Can Our AI Agent
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
+          
+          {/* 01 FinTech */}
+          <div className="bg-[#0e0e0e] p-10 aspect-square flex flex-col items-center justify-between text-center group hover:bg-[#141414] transition-colors">
+             <span className="text-4xl font-medium text-[#222]">01</span>
+             <div className="flex-1 flex items-center">
+               <h3 className="text-3xl font-medium text-white tracking-tight">FinTech</h3>
+             </div>
+             <p className="text-gray-500 text-sm leading-relaxed max-w-[200px]">
+               <span className="text-white font-medium">Human-like deep</span> research in complex industry
+             </p>
+          </div>
+
+          {/* Image */}
+          <div className="aspect-square relative group overflow-hidden bg-[#0e0e0e]">
+             <img 
+              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000&auto=format&fit=crop" 
+              alt="Team Collaboration" 
+              className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+            />
+          </div>
+
+          {/* 02 Content Creation */}
+          <div className="bg-[#0e0e0e] p-10 aspect-square flex flex-col items-center justify-between text-center group hover:bg-[#141414] transition-colors">
+             <span className="text-4xl font-medium text-[#222]">02</span>
+             <div className="flex-1 flex items-center">
+                <h3 className="text-3xl font-medium text-white tracking-tight">Content Creation</h3>
+             </div>
+             <p className="text-gray-500 text-sm leading-relaxed max-w-[200px]">
+               <span className="text-white font-medium">AI Visibility</span> Audit for your Business
+             </p>
+          </div>
+
+          {/* 03 Blockchain */}
+          <div className="bg-[#0e0e0e] p-10 aspect-square flex flex-col items-center justify-between text-center group hover:bg-[#141414] transition-colors">
+             <span className="text-4xl font-medium text-[#222]">03</span>
+             <div className="flex-1 flex items-center">
+                <h3 className="text-3xl font-medium text-white tracking-tight">Blockchain</h3>
+             </div>
+             {/* Hidden description reveals on hover */}
+             <p className="text-gray-500 text-sm leading-relaxed max-w-[200px] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+               <span className="text-white font-medium">Automated</span> smart contract verification
+             </p>
+          </div>
+
+          {/* 04 HealthCare */}
+          <div className="bg-[#0e0e0e] p-10 aspect-square flex flex-col items-center justify-between text-center group hover:bg-[#141414] transition-colors">
+             <span className="text-4xl font-medium text-[#222]">04</span>
+             <div className="flex-1 flex items-center">
+                <h3 className="text-3xl font-medium text-white tracking-tight">HealthCare</h3>
+             </div>
+             <p className="text-gray-500 text-sm leading-relaxed max-w-[200px] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+               <span className="text-white font-medium">HIPAA Compliant</span> data processing agents
+             </p>
+          </div>
+
+          {/* 05 Customer Service */}
+          <div className="bg-[#0e0e0e] p-10 aspect-square flex flex-col items-center justify-between text-center group hover:bg-[#141414] transition-colors">
+             <span className="text-4xl font-medium text-[#222]">05</span>
+             <div className="flex-1 flex items-center">
+                <h3 className="text-3xl font-medium text-white tracking-tight">Customer Service</h3>
+             </div>
+             <p className="text-gray-500 text-sm leading-relaxed max-w-[200px] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+               <span className="text-white font-medium">Instant</span> multi-channel resolution
+             </p>
           </div>
 
         </div>
