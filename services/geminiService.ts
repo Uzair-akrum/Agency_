@@ -12,8 +12,8 @@ export const generateAgentResponse = async (history: { role: string; text: strin
     const chat: Chat = ai.chats.create({
       model: "gemini-2.5-flash",
       config: {
-        systemInstruction: `You are Chris, a helpful and professional AI representative for Cogent Labs. 
-      Cogent Labs specializes in building practical, high-ROI AI agents for businesses.
+        systemInstruction: `You are Chris, a helpful and professional AI representative for Tangent Labs. 
+      Tangent Labs specializes in building practical, high-ROI AI agents for businesses.
       Your goal is to answer questions about our services and encourage users to 'Book a Call'.
       Keep answers concise (under 50 words), friendly, and business-oriented.
       Tone: Confident, modern, efficient.

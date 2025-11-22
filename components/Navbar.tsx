@@ -26,7 +26,7 @@ export const Navbar: React.FC = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-6 bg-[#0a0a0a]/80 backdrop-blur-sm">
       <div className="flex items-center gap-2">
         <Link to="/" className="font-sans text-2xl font-medium tracking-tight text-white hover:opacity-90 transition-opacity">
-          cogent.
+          tangent.
         </Link>
       </div>
 
@@ -44,7 +44,7 @@ export const Navbar: React.FC = () => {
           </button>
 
           {/* Dropdown Menu */}
-          <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-[#111] border border-white/10 rounded-lg shadow-xl overflow-hidden transition-all duration-200 origin-top ${isServicesOpen || 'group-hover:block hidden hover:block' ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'}`}>
+          <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-[#111] border border-white/10 rounded-lg shadow-xl overflow-hidden transition-all duration-200 origin-top ${isServicesOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'}`}>
             <div className="py-1">
               <Link 
                 to="/services/generative-ai" 
@@ -53,10 +53,10 @@ export const Navbar: React.FC = () => {
                 Generative AI
               </Link>
               <Link 
-                to="/#services" 
+                to="/services/web-development" 
                 className="block px-4 py-3 text-gray-400 hover:bg-white/5 hover:text-white transition-colors"
               >
-                Web/Mobile Dev
+                Web Development
               </Link>
             </div>
           </div>

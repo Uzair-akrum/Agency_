@@ -9,7 +9,7 @@ export const Hero: React.FC = () => {
         {/* Left Column: Typography */}
         <div className="flex flex-col gap-8">
           <span className="text-gray-500 text-xs font-medium tracking-wide uppercase">
-            Welcome To Cogent Labs
+            Welcome To Tangent Labs
           </span>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-sans font-medium leading-[1.1] tracking-tight text-white">

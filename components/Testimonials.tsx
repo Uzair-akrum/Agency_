@@ -6,7 +6,7 @@ const testimonials = [
     id: 1,
     name: "Scott",
     role: "Founder, Aurora",
-    quote: "“Cogent Labs have been absolutely incredible to work with. They are highly professional, extremely prompt, and bring a diverse range of skill sets to the table.”",
+    quote: "“Tangent Labs have been absolutely incredible to work with. They are highly professional, extremely prompt, and bring a diverse range of skill sets to the table.”",
     image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600&auto=format&fit=crop",
     borderColor: "border-purple-500",
     shadowColor: "shadow-purple-500/10"
@@ -15,7 +15,7 @@ const testimonials = [
     id: 2,
     name: "Kara",
     role: "Co-founder, Narratize",
-    quote: "“I am grateful to be connected with Cogent Labs! They are technically proficient, proactive in communication, and true partners in achieving our goals.”",
+    quote: "“I am grateful to be connected with Tangent Labs! They are technically proficient, proactive in communication, and true partners in achieving our goals.”",
     image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop",
     borderColor: "border-rose-500",
     shadowColor: "shadow-rose-500/10"
@@ -50,7 +50,7 @@ export const Testimonials: React.FC = () => {
     <section className="py-24 bg-[#0a0a0a] border-b border-white/5">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <h2 className="text-4xl md:text-5xl font-medium text-white mb-16 tracking-tight">
-          Success, Powered by Cogent Labs
+          Success, Powered by Tangent Labs
         </h2>
 
         {/* Scroll Container */}

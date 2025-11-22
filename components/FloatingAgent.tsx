@@ -6,7 +6,7 @@ import { ChatMessage } from '../types';
 export const FloatingAgent: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { role: 'model', text: "Hey, I'm Chris from Cogent Labs. Let's find the right solution to make your team work smarter." }
+    { role: 'model', text: "Hey, I'm Chris from Tangent Labs. Let's find the right solution to make your team work smarter." }
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -53,7 +53,7 @@ export const FloatingAgent: React.FC = () => {
             </div>
             <div>
               <h4 className="font-medium text-white text-sm">Chris</h4>
-              <p className="text-[10px] text-gray-400 uppercase tracking-wide">Cogent Labs AI</p>
+              <p className="text-[10px] text-gray-400 uppercase tracking-wide">Tangent Labs AI</p>
             </div>
           </div>
           <button onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-white transition-colors">
@@ -121,7 +121,7 @@ export const FloatingAgent: React.FC = () => {
         {/* Text Content */}
         <div className="flex flex-col justify-center mr-2 md:mr-6 max-w-[200px] md:max-w-none">
           <span className="text-xs text-gray-300 font-medium leading-tight">
-            <span className="font-bold text-white">Hey, I'm Chris from Cogent Labs.</span> Let's find the right solution to make your team work smarter.
+            <span className="font-bold text-white">Hey, I'm Chris from Tangent Labs.</span> Let's find the right solution to make your team work smarter.
           </span>
         </div>
 

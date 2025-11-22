@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar';
 import { FloatingAgent } from './components/FloatingAgent';
 import { Home } from './pages/Home';
 import { GenerativeAI } from './pages/GenerativeAI';
+import { WebDevelopment } from './pages/WebDevelopment';
 
 // Layout component to wrap pages
 const Layout: React.FC = () => {
@@ -15,7 +16,7 @@ const Layout: React.FC = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-cogent-bg text-white font-sans selection:bg-orange-500/30 selection:text-orange-500 overflow-x-hidden flex flex-col">
+    <div className="min-h-screen bg-tangent-bg text-white font-sans selection:bg-orange-500/30 selection:text-orange-500 overflow-x-hidden flex flex-col">
       <Navbar />
       
       <main className="flex-grow">
@@ -34,6 +35,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="services/generative-ai" element={<GenerativeAI />} />
+          <Route path="services/web-development" element={<WebDevelopment />} />
         </Route>
       </Routes>
     </BrowserRouter>

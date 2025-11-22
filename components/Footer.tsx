@@ -11,10 +11,10 @@ export const Footer: React.FC = () => {
           {/* Brand Column */}
           <div className="md:col-span-5 flex flex-col gap-6">
             <div className="text-2xl font-medium tracking-tight text-white">
-              cogent.
+              tangent.
             </div>
             <p className="text-gray-500 text-sm leading-relaxed max-w-md">
-              <span className="text-gray-300 font-medium">Cogent Labs</span> is a young, full-service software development company with a focus on Generative AI, Web and Mobile. Our customers range from early stage startups to enterprise companies (3000+ in size).
+              <span className="text-gray-300 font-medium">Tangent Labs</span> is a young, full-service software development company with a focus on Generative AI, Web and Mobile. Our customers range from early stage startups to enterprise companies (3000+ in size).
             </p>
           </div>
 
@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
             <h4 className="text-white font-medium text-sm mb-6">Contact Us</h4>
             <div className="flex flex-col gap-4 text-sm text-gray-500">
               <a href="tel:+923001114369" className="hover:text-white transition-colors">+923001114369</a>
-              <a href="mailto:hello@cogentlabs.co" className="hover:text-white transition-colors">hello@cogentlabs.co</a>
+              <a href="mailto:hello@tangentlabs.co" className="hover:text-white transition-colors">hello@tangentlabs.co</a>
               <address className="not-italic leading-relaxed mt-2">
                 16192 Coastal Hwy. <br />
                 Lewes, DE 19958
@@ -49,7 +49,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/5 gap-4">
           <p className="text-gray-400 text-xs">
-            Copyright © 2025 Cogent Labs | All Rights Reserved
+            Copyright © 2025 Tangent Labs | All Rights Reserved
           </p>
           
           <div className="flex items-center gap-6">
