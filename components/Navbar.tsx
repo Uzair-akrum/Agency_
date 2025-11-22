@@ -93,7 +93,7 @@ export const Navbar: React.FC = () => {
       </nav>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 z-40 bg-[#0a0a0a] pt-28 px-6 pb-10 flex flex-col transition-transform duration-300 ease-in-out md:hidden ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}>
+      <div className={`fixed inset-0 z-40 bg-[#0a0a0a] pt-28 px-6 pb-10 flex flex-col transition-transform duration-700 ease-in-out md:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           
           <div className="flex flex-col gap-8 flex-grow overflow-y-auto">
               <Link to="/" className="text-3xl font-medium text-white border-b border-white/5 pb-4">Home</Link>
