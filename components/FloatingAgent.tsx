@@ -113,8 +113,8 @@ export const FloatingAgent: React.FC = () => {
 
   // Collapsed View
   return (
-    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 animate-fade-in-scale w-full max-w-2xl px-6 pointer-events-none">
-      <div className="pointer-events-auto mx-auto bg-[#111315] border border-white/10 rounded-full p-1 pr-2 shadow-2xl flex items-center gap-3 max-w-fit cursor-pointer hover:border-white/20 transition-all" onClick={() => setIsOpen(true)}>
+    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 w-full max-w-2xl px-6 pointer-events-none">
+      <div className="animate-fade-in-scale pointer-events-auto mx-auto bg-[#111315] border border-white/10 rounded-full p-1 pr-2 shadow-2xl flex items-center gap-3 max-w-fit cursor-pointer hover:border-white/20 transition-all" onClick={() => setIsOpen(true)}>
         
         {/* Avatar */}
         <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border border-white/5">
