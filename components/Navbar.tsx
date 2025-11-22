@@ -75,8 +75,6 @@ export const Navbar: React.FC = () => {
               </div>
             </div>
           </div>
-
-          <a href="/#careers" className="transition-colors hover:text-white">Careers</a>
         </div>
 
         <div className="flex items-center gap-4">
@@ -103,8 +101,6 @@ export const Navbar: React.FC = () => {
                   <Link to="/services/generative-ai" className="text-xl text-gray-200 pl-4 border-l-2 border-white/10 hover:border-white transition-colors">Generative AI</Link>
                   <Link to="/services/web-development" className="text-xl text-gray-200 pl-4 border-l-2 border-white/10 hover:border-white transition-colors">Web Development</Link>
               </div>
-
-              <a href="/#careers" className="text-3xl font-medium text-white border-b border-white/5 pb-4 mt-4">Careers</a>
           </div>
 
           <div className="mt-6">

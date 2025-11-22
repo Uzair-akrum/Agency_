@@ -18,18 +18,8 @@ export const Footer: React.FC = () => {
             </p>
           </div>
 
-          {/* Spacer */}
-          <div className="hidden md:block md:col-span-3"></div>
-
-          {/* Links Column */}
-          <div className="md:col-span-2">
-            <h4 className="text-white font-medium text-sm mb-6">Links</h4>
-            <ul className="flex flex-col gap-4">
-              <li>
-                <a href="#careers" className="text-gray-500 hover:text-white text-sm transition-colors">Careers</a>
-              </li>
-            </ul>
-          </div>
+          {/* Spacer - Adjusted to take up remaining space */}
+          <div className="hidden md:block md:col-span-5"></div>
 
           {/* Contact Column */}
           <div className="md:col-span-2">
