@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-2">
             <h4 className="text-white font-medium text-sm mb-6">Contact Us</h4>
             <div className="flex flex-col gap-4 text-sm text-gray-500">
-              <a href="tel:+923001114369" className="hover:text-white transition-colors">+923001114369</a>
+              <a href="tel:+923201529345" className="hover:text-white transition-colors">+923201529345</a>
               <a href="mailto:hello@tangentlabs.co" className="hover:text-white transition-colors">hello@tangentlabs.co</a>
               <address className="not-italic leading-relaxed mt-2">
                 16192 Coastal Hwy. <br />
