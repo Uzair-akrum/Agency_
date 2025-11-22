@@ -44,7 +44,7 @@ export const FloatingAgent: React.FC = () => {
   // Expanded View
   if (isOpen) {
     return (
-      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-6 w-[90vw] md:w-[400px] h-[500px] bg-[#111] rounded-2xl border border-white/10 shadow-2xl flex flex-col overflow-hidden z-50 animate-in slide-in-from-bottom-5 fade-in duration-300 font-sans">
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-6 w-[90vw] md:w-[400px] h-[500px] bg-[#111] rounded-2xl border border-white/10 shadow-2xl flex flex-col overflow-hidden z-50 animate-fade-in-up-fast font-sans">
         {/* Header */}
         <div className="bg-[#161616] p-4 flex items-center justify-between border-b border-white/5">
           <div className="flex items-center gap-3">
@@ -111,9 +111,9 @@ export const FloatingAgent: React.FC = () => {
     );
   }
 
-  // Collapsed View - Exact replica of the screenshot pill
+  // Collapsed View
   return (
-    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 animate-in fade-in zoom-in duration-500 w-full max-w-2xl px-6 pointer-events-none">
+    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 animate-fade-in-scale w-full max-w-2xl px-6 pointer-events-none">
       <div className="pointer-events-auto mx-auto bg-[#111315] border border-white/10 rounded-full p-1 pr-2 shadow-2xl flex items-center gap-3 max-w-fit cursor-pointer hover:border-white/20 transition-all" onClick={() => setIsOpen(true)}>
         
         {/* Avatar */}

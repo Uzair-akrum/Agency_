@@ -11,7 +11,7 @@ export const GenerativeAI: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
           {/* Left Column: Images & Stats */}
-          <div className="flex flex-col gap-6 h-full w-full order-2 lg:order-1 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
+          <div className="flex flex-col gap-6 h-full w-full order-2 lg:order-1 opacity-0 animate-fade-in-up delay-200">
             {/* Top Image */}
             <div className="w-full h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden relative">
                <LazyImage 
@@ -34,21 +34,21 @@ export const GenerativeAI: React.FC = () => {
 
           {/* Right Column: Text Content */}
           <div className="flex flex-col gap-8 order-1 lg:order-2">
-            <span className="text-gray-500 text-xs font-bold tracking-widest uppercase animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <span className="text-gray-500 text-xs font-bold tracking-widest uppercase opacity-0 animate-fade-in-up">
               Generative AI
             </span>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sans font-medium leading-[1.1] tracking-tight text-white animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sans font-medium leading-[1.1] tracking-tight text-white opacity-0 animate-fade-in-up delay-100">
               Build AI Agents That <br className="hidden lg:block" />
               Work - Not Just <br className="hidden lg:block" />
               Demos
             </h1>
 
-            <p className="text-gray-400 text-base md:text-lg max-w-lg leading-relaxed animate-in fade-in slide-in-from-bottom-6 duration-700 delay-200">
+            <p className="text-gray-400 text-base md:text-lg max-w-lg leading-relaxed opacity-0 animate-fade-in-up delay-200">
               We audit your systems, uncover high-leverage use cases, and deploy AI agents that deliver measurable results.
             </p>
 
-            <div className="pt-4 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300">
+            <div className="pt-4 opacity-0 animate-fade-in-up delay-300">
               <button className="inline-flex items-center justify-center px-8 py-3 bg-[#1A1A1A] text-white text-sm font-medium rounded-full hover:bg-[#252525] transition-all border border-white/10 group">
                 Book a Call
                 <ArrowUpRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

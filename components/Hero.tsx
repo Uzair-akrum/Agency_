@@ -9,21 +9,21 @@ export const Hero: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         {/* Left Column: Typography */}
         <div className="flex flex-col gap-8">
-          <span className="text-gray-500 text-xs font-medium tracking-wide uppercase animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 fill-mode-forwards opacity-0">
+          <span className="text-gray-500 text-xs font-medium tracking-wide uppercase opacity-0 animate-fade-in-up delay-100">
             Welcome To Tangent Labs
           </span>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-sans font-medium leading-[1.1] tracking-tight text-white animate-in fade-in slide-in-from-bottom-6 duration-700 delay-200 fill-mode-forwards opacity-0">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-sans font-medium leading-[1.1] tracking-tight text-white opacity-0 animate-fade-in-up delay-200">
             Your Competitor Isn’t <br className="hidden lg:block" />
             Smarter—Their <br className="hidden lg:block" />
             AI Agent Is
           </h1>
 
-          <p className="text-gray-400 text-base md:text-lg max-w-lg leading-relaxed animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300 fill-mode-forwards opacity-0">
+          <p className="text-gray-400 text-base md:text-lg max-w-lg leading-relaxed opacity-0 animate-fade-in-up delay-300">
             We specialize in practical AI agents that deliver real-world results, measurable and undeniable.
           </p>
 
-          <div className="pt-2 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-500 fill-mode-forwards opacity-0">
+          <div className="pt-2 opacity-0 animate-fade-in-up delay-500">
             <button className="inline-flex items-center justify-center px-8 py-3 bg-[#1A1A1A] text-white text-sm font-medium rounded-full hover:bg-[#252525] transition-all border border-white/10">
               Book a Call
             </button>
@@ -31,7 +31,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Right Column: Bento Grid */}
-        <div className="grid grid-cols-2 gap-4 h-full w-full animate-in fade-in zoom-in-95 duration-1000 delay-300 fill-mode-forwards opacity-0">
+        <div className="grid grid-cols-2 gap-4 h-full w-full opacity-0 animate-fade-in-scale delay-300">
           
           {/* Card 1: Portrait */}
           <div className="col-span-1 aspect-square rounded-lg overflow-hidden relative">
