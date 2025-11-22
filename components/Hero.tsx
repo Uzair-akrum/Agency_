@@ -36,7 +36,7 @@ export const Hero: React.FC = () => {
           {/* Card 1: Portrait */}
           <div className="col-span-1 aspect-square rounded-lg overflow-hidden relative">
              <LazyImage 
-              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1000&auto=format&fit=crop" 
+              src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1000&auto=format&fit=crop" 
               alt="Team Member" 
             />
           </div>
