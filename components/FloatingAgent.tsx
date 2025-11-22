@@ -13,6 +13,7 @@ export const FloatingAgent: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const agentRef = useRef<HTMLDivElement>(null);
 
   // Auto-scroll to bottom
   useEffect(() => {
@@ -20,6 +21,22 @@ export const FloatingAgent: React.FC = () => {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages, isOpen]);
+
+  // Close on click outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (agentRef.current && !agentRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   const handleSend = async () => {
     if (!inputValue.trim() || isLoading) return;
@@ -44,7 +61,10 @@ export const FloatingAgent: React.FC = () => {
   // Expanded View
   if (isOpen) {
     return (
-      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-6 w-[90vw] md:w-[400px] h-[500px] bg-[#111] rounded-2xl border border-white/10 shadow-2xl flex flex-col overflow-hidden z-50 animate-fade-in-up-fast font-sans">
+      <div 
+        ref={agentRef}
+        className="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:bottom-6 md:w-[400px] h-[60vh] md:h-[500px] bg-[#111] rounded-2xl border border-white/10 shadow-2xl flex flex-col overflow-hidden z-[60] animate-fade-in-up-fast font-sans"
+      >
         {/* Header */}
         <div className="bg-[#161616] p-4 flex items-center justify-between border-b border-white/5">
           <div className="flex items-center gap-3">
@@ -59,8 +79,8 @@ export const FloatingAgent: React.FC = () => {
               <p className="text-[10px] text-gray-400 uppercase tracking-wide">Tangent Labs AI</p>
             </div>
           </div>
-          <button onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-white transition-colors">
-            <X size={18} />
+          <button onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-white transition-colors p-1">
+            <X size={20} />
           </button>
         </div>
 
@@ -68,7 +88,7 @@ export const FloatingAgent: React.FC = () => {
         <div className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar bg-[#0a0a0a]" ref={scrollRef}>
           {messages.map((msg, idx) => (
             <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-              <div className={`max-w-[85%] p-3 rounded-2xl text-sm leading-relaxed ${
+              <div className={`max-w-[85%] p-3 rounded-2xl text-sm leading-relaxed break-words ${
                 msg.role === 'user' 
                   ? 'bg-white text-black rounded-br-sm' 
                   : 'bg-[#1A1A1A] text-gray-200 rounded-bl-sm border border-white/5'
@@ -101,7 +121,7 @@ export const FloatingAgent: React.FC = () => {
             />
             <button 
               onClick={handleSend}
-              className={`p-1.5 mr-1.5 rounded-full transition-all ${inputValue ? 'bg-white text-black' : 'text-gray-600'}`}
+              className={`p-1.5 mr-1.5 rounded-full transition-all flex-shrink-0 ${inputValue ? 'bg-white text-black' : 'text-gray-600'}`}
             >
               <Send size={14} />
             </button>
