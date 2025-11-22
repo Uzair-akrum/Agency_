@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { X, Send, Volume2, VolumeX } from 'lucide-react';
 import { generateAgentResponse } from '../services/geminiService';
 import { ChatMessage } from '../types';
+import { LazyImage } from './LazyImage';
 
 export const FloatingAgent: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,6 +39,8 @@ export const FloatingAgent: React.FC = () => {
     if (e.key === 'Enter') handleSend();
   };
 
+  const avatarUrl = "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop";
+
   // Expanded View
   if (isOpen) {
     return (
@@ -47,7 +50,7 @@ export const FloatingAgent: React.FC = () => {
           <div className="flex items-center gap-3">
             <div className="relative">
               <div className="w-8 h-8 rounded-full overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop" alt="Chris" className="w-full h-full object-cover" />
+                 <LazyImage src={avatarUrl} alt="Chris" />
               </div>
               <div className="absolute bottom-0 right-0 w-2 h-2 bg-green-500 rounded-full border border-[#161616]"></div>
             </div>
@@ -114,8 +117,8 @@ export const FloatingAgent: React.FC = () => {
       <div className="pointer-events-auto mx-auto bg-[#111315] border border-white/10 rounded-full p-1 pr-2 shadow-2xl flex items-center gap-3 max-w-fit cursor-pointer hover:border-white/20 transition-all" onClick={() => setIsOpen(true)}>
         
         {/* Avatar */}
-        <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-gray-800">
-           <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop" alt="Chris" className="w-full h-full object-cover" />
+        <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border border-white/5">
+           <LazyImage src={avatarUrl} alt="Chris" />
         </div>
 
         {/* Text Content */}

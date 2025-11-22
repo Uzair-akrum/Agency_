@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { LazyImage } from './LazyImage';
 
 const testimonials = [
   {
@@ -65,14 +66,13 @@ export const Testimonials: React.FC = () => {
             >
                {/* Image Section */}
                <div className="w-full md:w-5/12 h-64 md:h-auto relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gray-800 animate-pulse" />
-                  <img 
+                  <LazyImage 
                     src={item.image} 
                     alt={item.name} 
-                    className="relative w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="group-hover:scale-105 transition-transform duration-700"
                   />
                   {/* Gradient Overlay for mobile readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent md:hidden"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent md:hidden pointer-events-none"></div>
                </div>
 
                {/* Content Section */}

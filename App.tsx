@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, Outlet, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { FloatingAgent } from './components/FloatingAgent';
-import { Home } from './pages/Home';
-import { GenerativeAI } from './pages/GenerativeAI';
-import { WebDevelopment } from './pages/WebDevelopment';
+import { PageLoader } from './components/PageLoader';
+
+// Lazy load pages for performance optimization
+const Home = lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
+const GenerativeAI = lazy(() => import('./pages/GenerativeAI').then(module => ({ default: module.GenerativeAI })));
+const WebDevelopment = lazy(() => import('./pages/WebDevelopment').then(module => ({ default: module.WebDevelopment })));
 
 // Layout component to wrap pages
 const Layout: React.FC = () => {
@@ -20,7 +23,9 @@ const Layout: React.FC = () => {
       <Navbar />
       
       <main className="flex-grow">
-        <Outlet />
+        <Suspense fallback={<PageLoader />}>
+          <Outlet />
+        </Suspense>
       </main>
 
       <FloatingAgent />

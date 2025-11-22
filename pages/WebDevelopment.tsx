@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowUpRight, Zap, Waypoints, RefreshCcw, Code } from 'lucide-react';
 import { Footer } from '../components/Footer';
+import { LazyImage } from '../components/LazyImage';
 
 export const WebDevelopment: React.FC = () => {
   return (
@@ -10,13 +11,13 @@ export const WebDevelopment: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
           {/* Left Column: Images & Stats */}
-          <div className="flex flex-col gap-6 h-full w-full order-2 lg:order-1">
+          <div className="flex flex-col gap-6 h-full w-full order-2 lg:order-1 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
             {/* Top Image */}
             <div className="w-full h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden relative">
-               <img 
+               <LazyImage 
                 src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" 
                 alt="Code on screen" 
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                className="hover:scale-105 transition-transform duration-700"
               />
             </div>
 
@@ -33,21 +34,21 @@ export const WebDevelopment: React.FC = () => {
 
           {/* Right Column: Text Content */}
           <div className="flex flex-col gap-8 order-1 lg:order-2">
-            <span className="text-gray-500 text-xs font-bold tracking-widest uppercase">
+            <span className="text-gray-500 text-xs font-bold tracking-widest uppercase animate-in fade-in slide-in-from-bottom-4 duration-700">
               Web & Mobile Development
             </span>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sans font-medium leading-[1.1] tracking-tight text-white">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-sans font-medium leading-[1.1] tracking-tight text-white animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
               Digital Experiences <br className="hidden lg:block" />
               That Convert <br className="hidden lg:block" />
               Users Into Fans
             </h1>
 
-            <p className="text-gray-400 text-base md:text-lg max-w-lg leading-relaxed">
+            <p className="text-gray-400 text-base md:text-lg max-w-lg leading-relaxed animate-in fade-in slide-in-from-bottom-6 duration-700 delay-200">
               We architect high-performance web and mobile applications using cutting-edge technologies like React, Node.js, and React Native.
             </p>
 
-            <div className="pt-4">
+            <div className="pt-4 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300">
               <button className="inline-flex items-center justify-center px-8 py-3 bg-[#1A1A1A] text-white text-sm font-medium rounded-full hover:bg-[#252525] transition-all border border-white/10 group">
                 Start Your Project
                 <ArrowUpRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -91,10 +92,10 @@ export const WebDevelopment: React.FC = () => {
             
             {/* Card 1: Image */}
             <div className="col-span-1 aspect-square rounded-2xl overflow-hidden relative group">
-               <img 
+               <LazyImage 
                 src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=1000&auto=format&fit=crop" 
                 alt="Code Structure" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className="group-hover:scale-110 transition-transform duration-700"
               />
             </div>
 
@@ -226,10 +227,10 @@ export const WebDevelopment: React.FC = () => {
 
           {/* Image */}
           <div className="aspect-square relative group overflow-hidden bg-[#0e0e0e]">
-             <img 
+             <LazyImage 
               src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1000&auto=format&fit=crop" 
               alt="Team Collaboration" 
-              className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+              className="opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
             />
           </div>
 
