@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Outlet, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
-import { Footer } from './components/Footer';
 import { FloatingAgent } from './components/FloatingAgent';
 import { Home } from './pages/Home';
 import { GenerativeAI } from './pages/GenerativeAI';
@@ -23,7 +22,6 @@ const Layout: React.FC = () => {
         <Outlet />
       </main>
 
-      <Footer />
       <FloatingAgent />
     </div>
   );

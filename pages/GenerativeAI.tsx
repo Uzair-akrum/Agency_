@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUpRight, Zap, Waypoints, RefreshCcw } from 'lucide-react';
+import { Footer } from '../components/Footer';
 
 export const GenerativeAI: React.FC = () => {
   return (
@@ -285,6 +286,103 @@ export const GenerativeAI: React.FC = () => {
 
         </div>
       </section>
+
+      {/* Section 5: Comparison */}
+      <section className="py-32 px-6 md:px-12 max-w-[1000px] mx-auto">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-sans font-medium text-white leading-tight mb-4">
+            What makes us better <br />
+            than the rest?
+          </h2>
+          <p className="text-gray-400 text-sm tracking-wide">
+            Built for execution, not experimentation.
+          </p>
+        </div>
+
+        <div className="relative bg-[#0e0e0e] rounded-2xl border border-white/5 overflow-hidden">
+          
+          {/* VS Badge */}
+          <div className="absolute left-1/2 top-[100px] -translate-x-1/2 z-10">
+             <div className="bg-[#0a0a0a] border border-white/10 text-white font-bold text-xl px-4 py-3 rounded-lg shadow-xl">
+               VS
+             </div>
+          </div>
+
+          <div className="grid grid-cols-2 relative divide-x divide-white/5">
+              {/* Left Column: Cogent */}
+              <div className="divide-y divide-white/5">
+                  <div className="p-8 md:p-12">
+                      <h3 className="text-2xl font-medium text-white">Cogent</h3>
+                  </div>
+                  
+                  <div className="p-6 md:px-12 md:py-8">
+                      <div className="text-gray-500 text-xs mb-1">AI Output Evaluation</div>
+                      <div className="text-white font-medium text-lg">95%+ results out of the box</div>
+                  </div>
+                  <div className="p-6 md:px-12 md:py-8">
+                      <div className="text-gray-500 text-xs mb-1">Multi-modal</div>
+                      <div className="text-white font-medium text-lg">Yes</div>
+                  </div>
+                  <div className="p-6 md:px-12 md:py-8">
+                      <div className="text-gray-500 text-xs mb-1">AI Token cost</div>
+                      <div className="text-white font-medium text-lg">&gt;75% savings</div>
+                  </div>
+                  <div className="p-6 md:px-12 md:py-8">
+                      <div className="text-gray-500 text-xs mb-1">Uptime</div>
+                      <div className="text-white font-medium text-lg">99.9%</div>
+                  </div>
+                  <div className="p-6 md:px-12 md:py-8">
+                      <div className="text-gray-500 text-xs mb-1">Agents in production</div>
+                      <div className="text-white font-medium text-lg">25+</div>
+                  </div>
+              </div>
+
+              {/* Right Column: The Others */}
+              <div className="divide-y divide-white/5 text-right">
+                   <div className="p-8 md:p-12">
+                       <h3 className="text-2xl font-medium text-white">The Others</h3>
+                   </div>
+                   
+                   <div className="p-6 md:px-12 md:py-8">
+                       <div className="text-gray-500 text-xs mb-1">AI Output Evaluation</div>
+                       <div className="text-gray-300 font-medium text-lg">None</div>
+                   </div>
+                   <div className="p-6 md:px-12 md:py-8">
+                       <div className="text-gray-500 text-xs mb-1">Multi-modal</div>
+                       <div className="text-gray-300 font-medium text-lg">No</div>
+                   </div>
+                   <div className="p-6 md:px-12 md:py-8">
+                       <div className="text-gray-500 text-xs mb-1">AI Token cost</div>
+                       <div className="text-gray-300 font-medium text-lg">0% savings</div>
+                   </div>
+                   <div className="p-6 md:px-12 md:py-8">
+                       <div className="text-gray-500 text-xs mb-1">Uptime</div>
+                       <div className="text-gray-300 font-medium text-lg">??</div>
+                   </div>
+                   <div className="p-6 md:px-12 md:py-8">
+                       <div className="text-gray-500 text-xs mb-1">Agents in production</div>
+                       <div className="text-gray-300 font-medium text-lg">Mostly demos</div>
+                   </div>
+              </div>
+          </div>
+
+          {/* Bottom CTA Banner */}
+          <div className="relative h-40 md:h-48 overflow-hidden">
+               <div className="absolute inset-0 bg-gradient-to-r from-yellow-700 via-orange-700 to-red-700 opacity-90"></div>
+               <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-30 mix-blend-overlay"></div>
+               
+               <div className="relative z-10 h-full flex flex-col items-center justify-center gap-6">
+                  <span className="text-3xl md:text-4xl font-medium text-white tracking-tight">You in?</span>
+                  <button className="px-8 py-3 bg-[#1A1A1A] text-white text-sm font-medium rounded-full hover:bg-black transition-all border border-white/10">
+                    Get in Touch
+                  </button>
+               </div>
+          </div>
+
+        </div>
+      </section>
+
+      <Footer />
     </>
   );
 };
