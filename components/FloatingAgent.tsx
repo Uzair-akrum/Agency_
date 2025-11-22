@@ -39,7 +39,7 @@ export const FloatingAgent: React.FC = () => {
     if (e.key === 'Enter') handleSend();
   };
 
-  const avatarUrl = "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop";
+  const avatarUrl = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop";
 
   // Expanded View
   if (isOpen) {
@@ -117,19 +117,19 @@ export const FloatingAgent: React.FC = () => {
       <div className="animate-fade-in-scale pointer-events-auto mx-auto bg-[#111315] border border-white/10 rounded-full p-1 pr-2 shadow-2xl flex items-center gap-3 max-w-fit cursor-pointer hover:border-white/20 transition-all" onClick={() => setIsOpen(true)}>
         
         {/* Avatar */}
-        <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border border-white/5">
+        <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border border-white/5 animate-fade-in-scale">
            <LazyImage src={avatarUrl} alt="Chris" />
         </div>
 
         {/* Text Content */}
-        <div className="flex flex-col justify-center mr-2 md:mr-6 max-w-[200px] md:max-w-none">
+        <div className="flex flex-col justify-center mr-2 md:mr-6 max-w-[200px] md:max-w-none animate-fade-in-scale delay-75">
           <span className="text-xs text-gray-300 font-medium leading-tight">
             <span className="font-bold text-white">Hey, I'm Chris from Tangent Labs.</span> Let's find the right solution to make your team work smarter.
           </span>
         </div>
 
         {/* Right Side Controls */}
-        <div className="flex items-center gap-3 pl-3 border-l border-white/10 h-8">
+        <div className="flex items-center gap-3 pl-3 border-l border-white/10 h-8 animate-fade-in-scale delay-100">
            
            {/* Audio Visualizer (Static/Fake for UI) */}
            <div className="flex items-center gap-0.5 h-4 opacity-50">
