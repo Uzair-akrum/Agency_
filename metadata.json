@@ -1,0 +1,7 @@
+{
+  "name": "Copy of Cogent Labs Clone",
+  "description": "A high-fidelity landing page clone for Cogent Labs featuring a modern dark aesthetic, bento-grid layout, and an integrated AI chat agent powered by Gemini.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
