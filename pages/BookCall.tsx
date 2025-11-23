@@ -15,6 +15,7 @@ interface FormData {
   budget: string;
   timeline: string;
   message: string;
+  document: File | null;
 }
 
 interface FormErrors {
@@ -34,7 +35,8 @@ export const BookCall: React.FC = () => {
     projectStage: '',
     budget: '',
     timeline: '',
-    message: ''
+    message: '',
+    document: null
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
@@ -86,6 +88,11 @@ export const BookCall: React.FC = () => {
         return newErrors;
       });
     }
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
+    setFormData(prev => ({ ...prev, document: file }));
   };
 
   if (isSubmitted) {
@@ -303,22 +310,36 @@ export const BookCall: React.FC = () => {
               {errors.projectStage && <p className="mt-1 text-xs text-red-500 flex items-center gap-1"><AlertCircle size={12}/> {errors.projectStage}</p>}
             </div>
 
-            {/* File Upload Placeholder */}
+            {/* File Upload */}
             <div>
                <label className="block text-sm font-medium text-gray-300 mb-2">Attach a relevant document (if any), to help us understand your idea better.</label>
-               <div className="flex justify-center px-6 pt-5 pb-6 border border-white/20 border-dashed rounded-md bg-[#1A1A1A] hover:bg-[#202020] transition-colors cursor-pointer">
+               <label className="flex justify-center px-6 pt-5 pb-6 border border-white/20 border-dashed rounded-md bg-[#1A1A1A] hover:bg-[#202020] transition-colors cursor-pointer">
                   <div className="space-y-1 text-center">
                      <svg className="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
                         <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                      </svg>
                      <div className="flex text-sm text-gray-400 justify-center">
-                        <span className="relative cursor-pointer rounded-md font-medium text-purple-400 hover:text-purple-300 focus-within:outline-none">
-                           <span>Drop your files here</span>
-                        </span>
-                        <p className="pl-1">to upload</p>
+                        {formData.document ? (
+                           <span className="text-purple-400">{formData.document.name}</span>
+                        ) : (
+                           <>
+                              <span className="relative rounded-md font-medium text-purple-400 hover:text-purple-300">
+                                 Click to upload
+                              </span>
+                              <p className="pl-1">or drag and drop</p>
+                           </>
+                        )}
                      </div>
+                     <p className="text-xs text-gray-500">PDF, DOC, DOCX up to 10MB</p>
                   </div>
-               </div>
+                  <input
+                     type="file"
+                     name="document"
+                     className="hidden"
+                     accept=".pdf,.doc,.docx"
+                     onChange={handleFileChange}
+                  />
+               </label>
             </div>
 
             {/* Budget */}
@@ -333,11 +354,10 @@ export const BookCall: React.FC = () => {
                   className={`block w-full appearance-none rounded-md border ${errors.budget ? 'border-red-500' : 'border-white/20'} bg-[#1A1A1A] px-4 py-3 text-white placeholder-gray-500 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all`}
                 >
                   <option value="" disabled>Select option...</option>
-                  <option value="Under $10k">Under $10k</option>
+                  <option value="$1k - $5k">$1k - $5k</option>
+                  <option value="$5k - $10k">$5k - $10k</option>
                   <option value="$10k - $25k">$10k - $25k</option>
                   <option value="$25k - $50k">$25k - $50k</option>
-                  <option value="$50k - $100k">$50k - $100k</option>
-                  <option value="$100k+">$100k+</option>
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-white">
                   <svg className="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
