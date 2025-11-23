@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { X, Send, Volume2, VolumeX } from 'lucide-react';
+import { X, Send } from 'lucide-react';
 import { generateAgentResponse } from '../services/geminiService';
 import { ChatMessage } from '../types';
 import { LazyImage } from './LazyImage';
@@ -12,7 +12,6 @@ export const FloatingAgent: React.FC = () => {
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
   const agentRef = useRef<HTMLDivElement>(null);
 
@@ -154,33 +153,12 @@ export const FloatingAgent: React.FC = () => {
 
         {/* Right Side Controls */}
         <div className="flex items-center gap-3 pl-3 border-l border-white/10 h-8 animate-fade-in-scale delay-100">
-           
-           {/* Audio Visualizer (Static/Fake for UI) */}
-           <div className="flex items-center gap-0.5 h-4 opacity-50" onClick={() => setIsOpen(true)}>
-              <div className="w-0.5 bg-white h-2 rounded-full"></div>
-              <div className="w-0.5 bg-white h-3 rounded-full"></div>
-              <div className="w-0.5 bg-white h-4 rounded-full"></div>
-              <div className="w-0.5 bg-white h-2 rounded-full"></div>
-              <div className="w-0.5 bg-white h-3 rounded-full"></div>
-           </div>
-           
-           {/* Mute Toggle */}
-           <button 
-             className="text-gray-400 hover:text-white transition-colors"
-             onClick={(e) => {
-               e.stopPropagation();
-               setIsMuted(!isMuted);
-             }}
-           >
-             {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
-           </button>
-           
            {/* Button - Now redirects to Book Call in new window */}
-           <Link 
+           <Link
              to="/book-call"
              target="_blank"
              className="bg-[#050505] text-white border border-white/10 px-4 py-1.5 rounded-full text-[11px] font-bold hover:bg-black transition-colors whitespace-nowrap"
-             onClick={(e) => e.stopPropagation()} 
+             onClick={(e) => e.stopPropagation()}
            >
              Get in Touch
            </Link>

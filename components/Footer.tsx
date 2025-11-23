@@ -1,5 +1,4 @@
 import React from 'react';
-import { Instagram, Linkedin } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -41,15 +40,6 @@ export const Footer: React.FC = () => {
           <p className="text-gray-400 text-xs">
             Copyright © 2025 Tangent Labs | All Rights Reserved
           </p>
-          
-          <div className="flex items-center gap-6">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-              <Instagram size={20} strokeWidth={1.5} />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-              <Linkedin size={20} strokeWidth={1.5} />
-            </a>
-          </div>
         </div>
 
       </div>
