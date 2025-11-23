@@ -3,6 +3,7 @@ import { X, Send, Volume2, VolumeX } from 'lucide-react';
 import { generateAgentResponse } from '../services/geminiService';
 import { ChatMessage } from '../types';
 import { LazyImage } from './LazyImage';
+import { Link } from 'react-router-dom';
 
 export const FloatingAgent: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -134,25 +135,28 @@ export const FloatingAgent: React.FC = () => {
   // Collapsed View
   return (
     <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 w-full max-w-2xl px-6 pointer-events-none">
-      <div className="animate-fade-in-scale pointer-events-auto mx-auto bg-[#111315] border border-white/10 rounded-full p-1 pr-2 shadow-2xl flex items-center gap-3 max-w-fit cursor-pointer hover:border-white/20 transition-all" onClick={() => setIsOpen(true)}>
+      <div className="animate-fade-in-scale pointer-events-auto mx-auto bg-[#111315] border border-white/10 rounded-full p-1 pr-2 shadow-2xl flex items-center gap-3 max-w-fit cursor-pointer hover:border-white/20 transition-all">
         
-        {/* Avatar */}
-        <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border border-white/5 animate-fade-in-scale">
-           <LazyImage src={avatarUrl} alt="Chris" />
-        </div>
+        {/* Click area to open chat */}
+        <div className="flex items-center gap-3" onClick={() => setIsOpen(true)}>
+          {/* Avatar */}
+          <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border border-white/5 animate-fade-in-scale">
+             <LazyImage src={avatarUrl} alt="Chris" />
+          </div>
 
-        {/* Text Content */}
-        <div className="flex flex-col justify-center mr-2 md:mr-6 max-w-[200px] md:max-w-none animate-fade-in-scale delay-75">
-          <span className="text-xs text-gray-300 font-medium leading-tight">
-            <span className="font-bold text-white">Hey, I'm Chris from Tangent Labs.</span> Let's find the right solution to make your team work smarter.
-          </span>
+          {/* Text Content */}
+          <div className="flex flex-col justify-center mr-2 md:mr-6 max-w-[200px] md:max-w-none animate-fade-in-scale delay-75">
+            <span className="text-xs text-gray-300 font-medium leading-tight">
+              <span className="font-bold text-white">Hey, I'm Chris from Tangent Labs.</span> Let's find the right solution to make your team work smarter.
+            </span>
+          </div>
         </div>
 
         {/* Right Side Controls */}
         <div className="flex items-center gap-3 pl-3 border-l border-white/10 h-8 animate-fade-in-scale delay-100">
            
            {/* Audio Visualizer (Static/Fake for UI) */}
-           <div className="flex items-center gap-0.5 h-4 opacity-50">
+           <div className="flex items-center gap-0.5 h-4 opacity-50" onClick={() => setIsOpen(true)}>
               <div className="w-0.5 bg-white h-2 rounded-full"></div>
               <div className="w-0.5 bg-white h-3 rounded-full"></div>
               <div className="w-0.5 bg-white h-4 rounded-full"></div>
@@ -171,10 +175,15 @@ export const FloatingAgent: React.FC = () => {
              {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
            </button>
            
-           {/* Button */}
-           <button className="bg-[#050505] text-white border border-white/10 px-4 py-1.5 rounded-full text-[11px] font-bold hover:bg-black transition-colors whitespace-nowrap">
+           {/* Button - Now redirects to Book Call in new window */}
+           <Link 
+             to="/book-call"
+             target="_blank"
+             className="bg-[#050505] text-white border border-white/10 px-4 py-1.5 rounded-full text-[11px] font-bold hover:bg-black transition-colors whitespace-nowrap"
+             onClick={(e) => e.stopPropagation()} 
+           >
              Get in Touch
-           </button>
+           </Link>
         </div>
 
       </div>

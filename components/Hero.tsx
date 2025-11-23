@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowUpRight, ScanFace, CheckCircle2, LayoutGrid } from 'lucide-react';
 import { LazyImage } from './LazyImage';
+import { Link } from 'react-router-dom';
 
 export const Hero: React.FC = () => {
   return (
@@ -24,9 +25,13 @@ export const Hero: React.FC = () => {
           </p>
 
           <div className="pt-2 opacity-0 animate-fade-in-up delay-500">
-            <button className="inline-flex items-center justify-center px-8 py-3 bg-[#1A1A1A] text-white text-sm font-medium rounded-full hover:bg-[#252525] transition-all border border-white/10">
+            <Link 
+              to="/book-call"
+              target="_blank"
+              className="inline-flex items-center justify-center px-8 py-3 bg-[#1A1A1A] text-white text-sm font-medium rounded-full hover:bg-[#252525] transition-all border border-white/10"
+            >
               Book a Call
-            </button>
+            </Link>
           </div>
         </div>
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowUpRight, Zap, Waypoints, RefreshCcw } from 'lucide-react';
 import { Footer } from '../components/Footer';
 import { LazyImage } from '../components/LazyImage';
+import { Link } from 'react-router-dom';
 
 export const GenerativeAI: React.FC = () => {
   return (
@@ -49,10 +50,14 @@ export const GenerativeAI: React.FC = () => {
             </p>
 
             <div className="pt-4 opacity-0 animate-fade-in-up delay-300">
-              <button className="inline-flex items-center justify-center px-8 py-3 bg-[#1A1A1A] text-white text-sm font-medium rounded-full hover:bg-[#252525] transition-all border border-white/10 group">
+              <Link 
+                to="/book-call"
+                target="_blank"
+                className="inline-flex items-center justify-center px-8 py-3 bg-[#1A1A1A] text-white text-sm font-medium rounded-full hover:bg-[#252525] transition-all border border-white/10 group"
+              >
                 Book a Call
                 <ArrowUpRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -77,10 +82,14 @@ export const GenerativeAI: React.FC = () => {
             </h2>
 
              <div className="pt-2">
-                <button className="inline-flex items-center justify-center px-8 py-3 bg-[#1A1A1A] text-white text-sm font-medium rounded-full hover:bg-[#252525] transition-all border border-white/10 group">
+                <Link 
+                  to="/book-call"
+                  target="_blank"
+                  className="inline-flex items-center justify-center px-8 py-3 bg-[#1A1A1A] text-white text-sm font-medium rounded-full hover:bg-[#252525] transition-all border border-white/10 group"
+                >
                   Book a Call
                   <ArrowUpRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </button>
+                </Link>
               </div>
 
             <p className="text-gray-400 text-base md:text-lg max-w-lg leading-relaxed mt-4">
@@ -374,9 +383,13 @@ export const GenerativeAI: React.FC = () => {
                
                <div className="relative z-10 h-full flex flex-col items-center justify-center gap-6">
                   <span className="text-3xl md:text-4xl font-medium text-white tracking-tight">You in?</span>
-                  <button className="px-8 py-3 bg-[#1A1A1A] text-white text-sm font-medium rounded-full hover:bg-black transition-all border border-white/10">
+                  <Link 
+                    to="/book-call"
+                    target="_blank"
+                    className="px-8 py-3 bg-[#1A1A1A] text-white text-sm font-medium rounded-full hover:bg-black transition-all border border-white/10"
+                  >
                     Get in Touch
-                  </button>
+                  </Link>
                </div>
           </div>
 

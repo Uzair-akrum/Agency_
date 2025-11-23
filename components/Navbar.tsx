@@ -78,9 +78,13 @@ export const Navbar: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <button className="hidden md:block px-6 py-2 text-xs font-medium text-white bg-[#1A1A1A] rounded-full hover:bg-[#252525] transition-all border border-white/10">
+          <Link 
+            to="/book-call" 
+            target="_blank"
+            className="hidden md:block px-6 py-2 text-xs font-medium text-white bg-[#1A1A1A] rounded-full hover:bg-[#252525] transition-all border border-white/10"
+          >
             Book a Call
-          </button>
+          </Link>
           <button 
             className="md:hidden text-white relative z-50 p-1"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -104,9 +108,13 @@ export const Navbar: React.FC = () => {
           </div>
 
           <div className="mt-6">
-               <button className="w-full py-4 text-base font-bold text-black bg-white rounded-full hover:bg-gray-200 transition-all">
+               <Link 
+                 to="/book-call" 
+                 target="_blank"
+                 className="block w-full text-center py-4 text-base font-bold text-black bg-white rounded-full hover:bg-gray-200 transition-all"
+               >
                   Book a Call
-               </button>
+               </Link>
           </div>
       </div>
     </>
